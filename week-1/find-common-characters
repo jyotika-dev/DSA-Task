@@ -1,0 +1,36 @@
+// https://leetcode.com/problems/find-common-characters
+
+import java.util.*;
+
+class Solution {
+    public List<String> commonChars(String[] words) {
+        List<String> result = new ArrayList<>();
+        if (words == null || words.length == 0) {
+            return result;
+        }
+        List<List<Character>> wordChars = new ArrayList<>();
+        for (String word : words) {
+            List<Character> chars = new ArrayList<>();
+            for (char c : word.toCharArray()) {
+                chars.add(c);
+            }
+            wordChars.add(chars);
+        }
+        for (char c : words[0].toCharArray()) {
+            boolean common = true;
+            for (int i = 1; i < wordChars.size(); i++) {
+                if (!wordChars.get(i).contains(c)) {
+                    common = false;
+                    break;
+                } else {
+                    wordChars.get(i).remove(Character.valueOf(c)); 
+                }
+            }
+            if (common) {
+                result.add(String.valueOf(c));
+            }
+        }
+
+        return result; 
+    } 
+}

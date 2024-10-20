@@ -1,0 +1,33 @@
+// https://leetcode.com/problems/count-elements-with-maximum-frequency
+
+class Solution {
+    public int maxFrequencyElements(int[] nums) {
+        int n=nums.length;
+        int freq[] = new int[n];
+        int visited[] = new int[n];
+        int total = 0;
+        for(int i=0; i<n; i++){
+            if(visited[i]==1){
+                continue;
+            }
+            int count=1;
+            for(int j=i+1; j<n;j++){
+                if(nums[i]==nums[j]){
+                    count++;
+                    visited[i]=1;
+                }
+            }
+            freq[i]=count;
+        }
+        int max=0;
+        for(int value: freq){
+            max=Math.max(max,value);
+        }
+        for(int value: freq){
+            if(value==max){
+                total +=value;
+            }
+        }
+        return total;
+    }
+}
