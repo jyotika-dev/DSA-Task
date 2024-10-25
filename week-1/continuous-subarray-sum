@@ -1,4 +1,4 @@
-<!-- https://leetcode.com/problems/continuous-subarray-sum/solutions/5279398/java-solution-easy/ -->
+//https://leetcode.com/problems/continuous-subarray-sum/
 
 class Solution {
     public boolean checkSubarraySum(int[] arr, int k) {

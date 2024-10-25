@@ -1,4 +1,4 @@
-<!-- https://leetcode.com/problems/contiguous-array/submissions/1433502453/ -->
+// https://leetcode.com/problems/contiguous-array/
 
 class Solution {
     public int findMaxLength(int[] arr) {

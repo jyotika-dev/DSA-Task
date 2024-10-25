@@ -1,4 +1,4 @@
-<!-- https://leetcode.com/problems/k-radius-subarray-averages/solutions/3660235/java-o-n-time-95-faster-singleiteration/ -->
+<!-- https://leetcode.com/problems/k-radius-subarray-averages/ -->
 
 class Solution {
     public int[] getAverages(int[] nums, int k) {
