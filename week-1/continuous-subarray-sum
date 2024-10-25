@@ -1,0 +1,24 @@
+<!-- https://leetcode.com/problems/continuous-subarray-sum/solutions/5279398/java-solution-easy/ -->
+
+class Solution {
+    public boolean checkSubarraySum(int[] arr, int k) {
+        int[] prefixSums = new int[arr.length];
+        prefixSums[0] = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            prefixSums[i] = prefixSums[i - 1] + arr[i];
+        }
+        Map<Integer, Integer> remainderIndices = new HashMap<>();
+        remainderIndices.put(0, -1);
+        for (int i = 0; i < prefixSums.length; i++) {
+            int remainder = prefixSums[i] % k; 
+            if (remainderIndices.containsKey(remainder)) {
+                if (i - remainderIndices.get(remainder) >= 2) {
+                    return true; 
+                }
+            } else {
+                remainderIndices.put(remainder, i);
+            }
+        }
+        return false;
+    }
+}

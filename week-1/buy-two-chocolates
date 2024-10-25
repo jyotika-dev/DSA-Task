@@ -1,4 +1,4 @@
-<!-- https://leetcode.com/problems/buy-two-chocolates -->
+// https://leetcode.com/problems/buy-two-chocolates
 
 class Solution {
 public:
